@@ -1,0 +1,12 @@
+services:
+
+  application:
+    build:
+      context: docker/apache
+      dockerfile: Dockerfile
+    working_dir: /var/www/application
+    volumes:
+      - ./app:/var/www/application
+    restart: always
+    ports:
+      - 8080:80
